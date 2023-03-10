@@ -8,7 +8,7 @@ file(GLOB_RECURSE src "lib/ui/*.cpp" "lib/modules/appendix/*.cpp")
 add_subdirectory(testInTest)
 
 add_library(${PROJECT_NAME} ${src})
-
+#/pоrts for vcpkg: [git repo]
 find_package(SFML 2.5 REQUIRED graphics network audio window system)
 find_package(yaml-cpp CONFIG REQUIRED)
 
