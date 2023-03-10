@@ -1,6 +1,7 @@
 #!/bin/python
 import os
 import sys
+from options import *
 
 def getFind(cmakeList, find, i = 0):
     reezult = ''
@@ -59,7 +60,7 @@ def getLibsInCmake(cmakeListDir):
 libs = list(set(getLibsInCmake('./')))
 commands = []
 for lib in libs:
-    commands.append(getInstallCommand('vcpkg install ') + lib)
+    commands.append(getInstallCommand(INSTALL_COMMAND) + lib + INSTALL_OPTION)
 
 print('start? ', commands, '[Y/n]')
 if (getBool()):
