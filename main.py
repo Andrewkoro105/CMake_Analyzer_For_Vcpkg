@@ -47,7 +47,8 @@ def find1Option(cmakeList, find):
     return reezults
 
 def getLibsInCmake(cmakeListDir):
-    cmakeList = open(cmakeListDir + '/CMakeLists.txt', 'r').read()
+    if cmakeListDir[-1] != '/': cmakeListDir += '/'
+    cmakeList = open(cmakeListDir + 'CMakeLists.txt', 'r').read()
 
     libs = []
     libs += find1Option(cmakeList, 'find_package(')
